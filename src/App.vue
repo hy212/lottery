@@ -46,7 +46,7 @@ export default {
   methods: {
     /** 获取奖品列表 */
     getDrawList() {
-      axios.get('/functions/lotteryList').then((response)=> {
+      axios.get('/functions/lotterylist').then((response)=> {
         const resData = response.data.data;
         this.prizes = resData.drawList.map((val, index)=> {
           return {
@@ -61,7 +61,7 @@ export default {
     },
     /** 抽奖 */
     drawLottery() {
-      axios.get('/functions/drawLottery').then((response)=> {
+      axios.get('/functions/drawlottery').then((response)=> {
         const resData = response.data.data;
         this.$refs.myLucky.stop(resData.drawIndex); // 中奖下标
         console.log('请求成功', response);
