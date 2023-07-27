@@ -25,14 +25,14 @@ async function handleRequest(req) {
         };
         return new Response(JSON.stringify(rspData), {
             headers: {
-                "content-type": "text/html;charset=UTF-8",
+                "content-type": "application/json",
             },
         })
     } catch (e) {
         console.log("Got Exception: " + e.stack);
         return new Response("Got Exception: " + e.message, {
             headers: {
-                "content-type": "text/html;charset=UTF-8",
+                "content-type": "application/json",
             },
         });
     }
